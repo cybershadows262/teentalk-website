@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#5b35b8" />
+  <meta name="description" content="TeenTalk — a friendly space for teens to talk about everyday challenges." />
+  <title>TeenTalk | A Safe Space to Talk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">T</div>
+      <div class="brand-copy">
+        <h1>TeenTalk</h1>
+        <p>A safe space to talk</p>
+      </div>
+      <span class="status"><span class="status-dot"></span> Ready to chat</span>
+    </header>
+
+    <section id="welcome-screen" class="panel welcome-panel">
+      <div class="welcome-icon" aria-hidden="true">☁</div>
+      <p class="eyebrow">YOU DON'T HAVE TO FIGURE IT ALL OUT ALONE</p>
+      <h2>Hey there. What's on your mind?</h2>
+      <p class="intro">Choose your age group and a topic to start a conversation. You can change your choices any time.</p>
+
+      <label class="field-label" for="age-select">Choose your age group</label>
+      <select id="age-select">
+        <option value="">Select age group</option>
+        <option value="13–15">13–15 years</option>
+        <option value="16–17">16–17 years</option>
+        <option value="18+">18+ years</option>
+      </select>
+
+      <p class="field-label">What would you like to talk about?</p>
+      <div class="topic-grid" id="topic-grid">
+        <button class="topic-card" data-topic="Academic pressure" type="button"><span>📚</span><b>Academic pressure</b><small>School, exams, expectations</small></button>
+        <button class="topic-card" data-topic="Friends and relationships" type="button"><span>🫂</span><b>Friends & relationships</b><small>Friends, family, conflicts</small></button>
+        <button class="topic-card" data-topic="Stress and emotions" type="button"><span>🌦️</span><b>Stress & emotions</b><small>Feelings and tough days</small></button>
+        <button class="topic-card" data-topic="Confidence and self-doubt" type="button"><span>🌱</span><b>Confidence</b><small>Self-doubt and confidence</small></button>
+      </div>
+      <p id="selection-error" class="error-message" role="alert"></p>
+      <button id="start-button" class="primary-button" type="button">Start conversation <span aria-hidden="true">→</span></button>
+      <p class="privacy-note">Your messages stay in this browser session and aren't sent to a server.</p>
+    </section>
+
+    <section id="chat-screen" class="panel chat-panel hidden" aria-label="TeenTalk conversation">
+      <div class="chat-heading">
+        <div>
+          <p class="eyebrow">YOUR CONVERSATION</p>
+          <h2 id="chat-topic-title">Let's talk</h2>
+        </div>
+        <button id="change-topic" class="secondary-button" type="button">Change topic</button>
+      </div>
+      <div id="chat-messages" class="messages" aria-live="polite" aria-relevant="additions"></div>
+      <div class="quick-replies" id="quick-replies">
+        <button type="button" data-message="I don't know where to start.">I don't know where to start</button>
+        <button type="button" data-message="Can you give me a small next step?">Give me a small next step</button>
+      </div>
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="message-input">Type your message</label>
+        <input id="message-input" type="text" maxlength="500" placeholder="Type your message..." autocomplete="off" />
+        <button class="send-button" type="submit" aria-label="Send message">➤</button>
+      </form>
+      <p class="chat-footnote">TeenTalk gives general supportive suggestions, not professional care.</p>
+    </section>
+
+    <footer class="page-footer">
+      <p>Made with care · TeenTalk</p>
+      <p>If you feel unsafe or in immediate danger, contact a trusted adult or local emergency services.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
